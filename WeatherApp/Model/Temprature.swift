@@ -6,3 +6,7 @@
 //
 
 import Foundation
+class Temprature: Codable {
+    var min: Double?
+    var max: Double?
+}

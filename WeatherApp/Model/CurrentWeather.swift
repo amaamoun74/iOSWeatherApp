@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class Current : Codable {
+class CurrentWeather : Codable {
     var dt: Int64?
     var temp: Double?
     var feels_like: Double?
@@ -19,7 +19,7 @@ class Current : Codable {
     var weather: [Weather]?
 }
 
-extension Current : Identifiable {
+extension CurrentWeather : Identifiable {
     var id : UUID {
         return UUID()
     }
