@@ -6,8 +6,8 @@ target 'WeatherApp' do
   use_frameworks!
 
   # Pods for WeatherApp
-	pod 'lottie-ios', '~> 4.1'
-        pod 'Reachability', '~> 3.2'
+	  pod 'Reachability', '~> 3.2'
+	  pod 'lottie-ios', '~> 4.1'
 
   target 'WeatherAppTests' do
     inherit! :search_paths
