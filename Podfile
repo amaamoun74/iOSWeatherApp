@@ -7,7 +7,7 @@ target 'WeatherApp' do
 
   # Pods for WeatherApp
 	  pod 'Reachability', '~> 3.2'
-	  pod 'lottie-ios', '~> 4.1'
+	  pod 'lottie-ios', '~> 3.1.3'
 
   target 'WeatherAppTests' do
     inherit! :search_paths
