@@ -9,7 +9,7 @@ import Foundation
 class DailyWeather: Codable {
     var dt: Int?
     var temp: Temprature?
-    var weather: Weather?
+    var weather: [Weather]?
 }
 
 extension DailyWeather: Identifiable {

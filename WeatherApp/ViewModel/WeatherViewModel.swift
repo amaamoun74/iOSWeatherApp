@@ -94,7 +94,7 @@ final class WeatherViewModel : ObservableObject{
         return String(format: "%0.1f", temp)
     }
     
-    func getTimeFor(timestamp: Int) -> String {
+    func getTimeFor(timestamp: Int64) -> String {
         return timeFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(timestamp)))
     }
     
@@ -103,7 +103,7 @@ final class WeatherViewModel : ObservableObject{
     }
     
     private func getLocation(){
-        CLGeocoder().geocodeAddressString(city) { placeMarks, error in
+        CLGeocoder().geocodeAddressString("new york") { placeMarks, error in
             if let places = placeMarks , let place = places.first
             {
                 self.getWeather(coord: place.location?.coordinate)
@@ -115,6 +115,7 @@ final class WeatherViewModel : ObservableObject{
         if let coord = coord {
             let url = URLManager.shared.getURLFor(lat: coord.latitude, lon: coord.longitude)
             getWeatherInternal(city: city, for: url)
+            print("ahmed")
         }
         else {
             let url = URLManager.shared.getURLFor(lat: 46.85623, lon: 51.84)
@@ -132,7 +133,7 @@ final class WeatherViewModel : ObservableObject{
                     self.weather = response
                 }
             case .failure(let error):
-                print(error)
+                print("error: \(error)")
             }
         }
     }
